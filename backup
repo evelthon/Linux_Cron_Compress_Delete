@@ -1,0 +1,28 @@
+#!/bin/sh
+
+myFolder[0]='folder1'
+myFolder[1]='folder2'
+myFolder[2]='folder1'
+myFolder[3]='folder2'
+
+# Operations for each folder
+# ------------------i-------------------------------------------------------------
+
+for f in "${myFolder[@]}"
+do
+
+        # Compress all contents of a camera folder
+        tar cpfz /srv/security_gz/$f/backup.tar.gz /srv/ftp/$f
+
+        # Rename the compressed file based on current date
+        mv /srv/security_gz/$f/backup.tar.gz /srv/security_gz/$f/$f.`date +%y%m%d`.tar.gz
+
+        # Calculate an amount of minutes, prior of which we delete files
+        HOUR=$(date +"%H")
+        #Calculate the amount of minutes of more than one hour ago
+        MINUTES_BEFORE=$(( $(( ++HOUR )) * 60 ))
+
+        # Delete all files older than X hours  * 60 Minutes ago (calculated before)
+        find /srv/ftp/$f/ -name "*.jpg" -type f -mmin "+$MINUTES_BEFORE" -exec rm  {} \;
+
+done

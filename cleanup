@@ -1,0 +1,5 @@
+#!/bin/sh
+find /srv/ftp/folder1/*.jpg -type f -mtime +15 | xargs rm
+find /srv/ftp/folder2/*.jpg -type f -mtime +15 | xargs rm
+find /srv/ftp/folder1/*.jpg -type f -mtime +15 | xargs rm
+find /srv/ftp/folder2/*.jpg -type f -mtime +15 | xargs rm
