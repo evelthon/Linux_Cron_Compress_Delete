@@ -1,0 +1,6 @@
+https://bobcares.com/blog/how-to-stop-cron-daemon-emails/
+/etc/sysconfig/crond
+
+CRONDARGS=" -s -m off"
+
+sudo service cron reload/restatrt
