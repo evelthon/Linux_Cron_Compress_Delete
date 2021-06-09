@@ -3,4 +3,7 @@ https://bobcares.com/blog/how-to-stop-cron-daemon-emails/
 
 CRONDARGS=" -s -m off"
 
-sudo service cron reload/restatrt
+sudo service cron reload/restart
+
+https://unix.stackexchange.com/questions/26790/what-is-mail-and-how-is-it-navigated
+https://gps.uml.edu/tutorials/unix-linux/unix/mail.htm
