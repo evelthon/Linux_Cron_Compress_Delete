@@ -7,3 +7,4 @@ sudo service cron reload/restart
 
 https://unix.stackexchange.com/questions/26790/what-is-mail-and-how-is-it-navigated
 https://gps.uml.edu/tutorials/unix-linux/unix/mail.htm
+https://unix.stackexchange.com/questions/338115/delete-mail-based-on-subject-pattern-mail-command
